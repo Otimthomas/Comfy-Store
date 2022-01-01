@@ -16,6 +16,8 @@ import {
 function App() {
   return (
     <Router>
+      <Navbar />
+      <Sidebar />
       <Switch>
         <Route exact path="/">
           <HomePage />
@@ -39,6 +41,7 @@ function App() {
           <ErrorPage />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }
