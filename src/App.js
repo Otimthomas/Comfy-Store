@@ -20,6 +20,24 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Route path="/cart">
+          <CartPage />
+        </Route>
+        <Route path="/checkout">
+          <CheckoutPage />
+        </Route>
+        <Route path="/products/:id">
+          <SingleProductPage />
+        </Route>
+        <Route path="/products">
+          <ProductsPage />
+        </Route>
+        <Route path="*">
+          <ErrorPage />
+        </Route>
       </Switch>
     </Router>
   );
