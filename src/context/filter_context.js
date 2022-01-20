@@ -60,13 +60,31 @@ export const FilterProvider = ({ children }) => {
   };
 
   const updateFilters = (e) => {
-    const value = e.target.value;
-    const name = e.target.name;
+    let value = e.target.value;
+    let name = e.target.name;
+
+    if (name === "category") {
+      value = e.target.textContent;
+    }
+
+    if (name === "color") {
+      value = e.target.dataset.color;
+    }
+
+    if (name === "price") {
+      value = Number(value);
+    }
+
+    if (name === "shipping") {
+      value = e.target.checked;
+    }
 
     dispatch({ type: UPDATE_FILTERS, payload: { value, name } });
   };
 
-  const clearFilters = () => {};
+  const clearFilters = () => {
+    dispatch({ type: CLEAR_FILTERS });
+  };
 
   return (
     <FilterContext.Provider
